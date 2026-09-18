@@ -68,18 +68,8 @@
   .copy{text-align:right} .copy .nw{white-space:nowrap} .copy .csep{display:none}
   @media(min-width:600px){ .copy .csep{display:inline} }
   @media(max-width:480px){ .strip{font-size:9px; padding:10px 14px} .strip .sm-hide{display:none} }
-  @media(max-width:360px){
-    main{padding:8px}
-    .strip{
-      flex-wrap:wrap;
-      align-items:flex-start;
-      gap:6px;
-      padding:10px 12px;
-      letter-spacing:.1em;
-    }
-    .body{padding:28px 12px 24px}
-    a.btn{padding:12px 16px; font-size:11px; letter-spacing:.12em}
-    .copy{text-align:left}
+  @media(max-width:375px){
+    .strip{flex-wrap:wrap; gap:8px}
     .copy .nw{white-space:normal}
   }
 </style>

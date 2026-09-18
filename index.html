@@ -196,6 +196,7 @@
     padding:16px 20px; border-bottom:1px solid var(--border-color);
     display:flex; flex-direction:column; justify-content:flex-end;
     animation:fadeUp .6s .45s both;
+    min-width:0;
   }
   @media(min-width:768px){ .info{padding:40px; border-bottom:none; border-right:1px solid var(--border-color)} }
   .info h1{
@@ -211,7 +212,7 @@
     padding:16px 20px; display:flex; flex-direction:column;
     justify-content:flex-end; gap:10px;
     animation:fadeUp .6s .6s both;
-    min-width:0;
+    min-width:0; width:100%;
   }
   @media(min-width:768px){ .actions{padding:40px; gap:12px} }
   @keyframes fadeUp{from{opacity:0; transform:translateY(12px)} to{opacity:1; transform:translateY(0)}}
@@ -223,7 +224,8 @@
     font-size:11px; text-transform:uppercase; letter-spacing:.2em;
     transition:background .15s, color .15s, border-color .15s;
     cursor:pointer;
-    min-width:0;
+    width:100%; max-width:100%; min-width:0;
+    box-sizing:border-box; gap:8px;
   }
   @media(min-width:640px){ .btn{font-size:13px; padding:16px 20px} }
   .btn .l{display:flex; align-items:center; gap:10px; min-width:0}
@@ -245,48 +247,24 @@
     font-size:9px; text-transform:uppercase; letter-spacing:.15em;
     min-width:0;
   }
+  @media(max-width:767px){
+    .footer{gap:8px; flex-wrap:wrap}
+  }
   @media(min-width:768px){ .footer{padding:12px 32px; font-size:11px; letter-spacing:.2em} }
   .footer .rev{color:var(--text-secondary); display:flex; align-items:center; gap:8px; min-width:0}
   .footer .rev .cyan{color:var(--accent-secondary)}
   .footer .rev .sep{display:none}
   @media(min-width:600px){ .footer .rev .sep{display:inline} }
-  .footer .copy{color:rgba(255,255,255,.5)}
-  .footer .copy{text-align:right}
+  .footer .copy{color:rgba(255,255,255,.5); text-align:right; min-width:0}
   .footer .copy .nw{white-space:nowrap}
   .footer .copy .csep{display:none}
   @media (min-width:460px) and (max-width:767px), (min-width:820px){ .footer .copy .csep{display:inline} }
   @media(min-width:480px){ .footer .copy{color:#fff} }
 
-  /* LAY-320: usable cards + footer at 320px-class viewports */
-  @media (max-width: 360px){
-    main{padding:6px}
-    .top-strip{
-      padding:8px 10px;
-      gap:8px;
-      letter-spacing:.1em;
-      flex-wrap:wrap;
-    }
-    .top-strip .left,.top-strip .right{gap:8px}
-    .mono{padding:10px}
-    .info{padding:12px}
-    .info h1{font-size:1.35rem}
-    .actions{padding:12px; gap:8px}
-    .btn{
-      padding:12px;
-      font-size:10px;
-      letter-spacing:.12em;
-    }
-    .btn .l{gap:8px}
-    .footer{
-      flex-direction:column;
-      align-items:flex-start;
-      gap:8px;
-      padding:10px 12px;
-      letter-spacing:.08em;
-    }
-    .footer .copy{text-align:left}
+  /* LAY-320: shrink cards/footer in-grid instead of clipping arrows */
+  @media (max-width: 375px){
     .footer .copy .nw{white-space:normal}
-    .footer .rev{flex-wrap:wrap; gap:6px}
+    .btn{letter-spacing:.12em; padding-left:12px; padding-right:12px}
   }
 
   /* Short viewports (phones in landscape) — the monogram's vh-based
@@ -305,16 +283,6 @@
     .actions{padding:8px 16px; gap:6px}
     .btn{padding:8px 14px; font-size:10px}
     .footer{padding:6px 14px; font-size:8px}
-  }
-  @media (max-width:360px) and (max-height:500px){
-    .footer{
-      flex-direction:column;
-      align-items:flex-start;
-      gap:4px;
-      padding:6px 10px;
-    }
-    .footer .copy{text-align:left}
-    .footer .copy .nw{white-space:normal}
   }
 
   /* Reduced motion */
