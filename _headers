@@ -1,0 +1,7 @@
+# MAN-01: Cloudflare Pages MIME map does not include .webmanifest,
+# so the file is served as application/octet-stream (and nosniff blocks sniffing).
+/site.webmanifest
+  Content-Type: application/manifest+json; charset=utf-8
+
+/*.webmanifest
+  Content-Type: application/manifest+json; charset=utf-8
